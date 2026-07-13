@@ -159,11 +159,11 @@ const industryIndex=[
 function IndustriesIndex(){return <section className="industries-index" id="experience"><div><p>FIVE OPERATING MODELS</p><h2>Same platform.<br/><em>Different consequences.</em></h2><span>Every vertical starts from its data boundary, workflow, approval chain, and evidence standard—not a stock photograph.</span></div>{industryIndex.map(x=><Link href={x.href} key={x.name} data-world-reveal><span>{x.n}</span><small>{x.status}</small><h3>{x.name}</h3><p>{x.body}</p><b>Explore operating model ↗</b></Link>)}</section>}
 
 const leaders=[
-  {initials:"SD",name:"Dr. Santanu Das",role:"Chairman",bio:"Semiconductor founder and public-company operator; led TranSwitch Corporation from inception to a NASDAQ listing."},
-  {initials:"NA",name:"Nishan Ali",role:"Founder & CEO",bio:"Nine years in core data science, 27+ production projects and products, healthcare AI experience, and two US patents across the leadership story."},
-  {initials:"JG",name:"John Gillotte",role:"Chief Technology Officer",bio:"Twenty-two years across enterprise technology, foundation-model architecture, and healthcare imaging systems."},
-  {initials:"IB",name:"Indranil Basu",role:"Data Science Advisor",bio:"Advises applied AI delivery, research quality, and the translation of advanced modeling into production outcomes."},
-  {initials:"AB",name:"Aditya Bhattachariya",role:"Principal DS & Engineering Advisor",bio:"Seventeen years of technical leadership across data science, engineering, and production AI delivery."},
+  {initials:"SD",name:"Dr. Santanu Das",role:"Chairman of the Board",bio:"PhD in Electrical Engineering, Washington University."},
+  {initials:"JG",name:"John Gillotte",role:"Co-Founder & CTO",bio:"BS in Computer Science, University of Michigan."},
+  {initials:"NA",name:"Nishan Ali",role:"Founder & CEO",bio:"M.Tech in Artificial Intelligence, IIT Jodhpur."},
+  {initials:"IB",name:"Indranil Basu",role:"Principal Data Science Advisor",bio:"B.Tech (Hons) in Electrical Engineering, IIT Kharagpur; M.Tech in Computer Science, ISI Kolkata."},
+  {initials:"AB",name:"Aditya Bhattacharya",role:"Principal Data Science & Engineering Advisor",bio:"MS in Computer Science with a specialization in Machine Learning, Georgia Institute of Technology."},
   {initials:"PD",name:"Pranta Das",role:"Lead Data Scientist",bio:"Leads data-science delivery across model development, evaluation, and customer-specific solution design."},
   {initials:"SM",name:"Soulina Mondal",role:"Associate ML Engineer",bio:"Builds and operationalizes machine-learning systems across the applied AI portfolio."},
   {initials:"SS",name:"Suchi Sharma",role:"Robotics Simulation Engineer",bio:"Works across intelligent robotics, digital twins, synthetic data, and simulation-led deployment."},
