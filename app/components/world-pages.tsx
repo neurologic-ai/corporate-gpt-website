@@ -162,8 +162,6 @@ const leaders=[
   {initials:"SD",name:"Dr. Santanu Das",role:"Chairman of the Board",bio:"PhD in Electrical Engineering, Washington University."},
   {initials:"JG",name:"John Gillotte",role:"Co-Founder & CTO",bio:"BS in Computer Science, University of Michigan."},
   {initials:"NA",name:"Nishan Ali",role:"Founder & CEO",bio:"M.Tech in Artificial Intelligence, IIT Jodhpur."},
-  {initials:"IB",name:"Indranil Basu",role:"Principal Data Science Advisor",bio:"B.Tech (Hons) in Electrical Engineering, IIT Kharagpur; M.Tech in Computer Science, ISI Kolkata."},
-  {initials:"AB",name:"Aditya Bhattacharya",role:"Principal Data Science & Engineering Advisor",bio:"MS in Computer Science with a specialization in Machine Learning, Georgia Institute of Technology."},
   {initials:"PD",name:"Pranta Das",role:"Lead Data Scientist",bio:"Leads data-science delivery across model development, evaluation, and customer-specific solution design."},
   {initials:"SM",name:"Soulina Mondal",role:"Associate ML Engineer",bio:"Builds and operationalizes machine-learning systems across the applied AI portfolio."},
   {initials:"SS",name:"Suchi Sharma",role:"Robotics Simulation Engineer",bio:"Works across intelligent robotics, digital twins, synthetic data, and simulation-led deployment."},
