@@ -1,0 +1,1 @@
+import { RoutePage,routeMetadata } from "../../components/route-page"; export const metadata=routeMetadata("industries/healthcare"); export default function Page(){return <RoutePage id="industries/healthcare"/>}

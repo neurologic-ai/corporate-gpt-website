@@ -1,0 +1,1 @@
+import type { Metadata } from "next"; import { BriefingPage } from "../components/inner-page"; export const metadata:Metadata={title:"Book a sovereignty briefing",description:"45 minutes with our team: your constraints, our architecture, and the dashboard that proves the learning."}; export default function Page(){return <BriefingPage/>}
