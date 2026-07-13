@@ -26,9 +26,7 @@ const verticals=[
 const leaders=[
   {initials:"SD",name:"Dr. Santanu Das",role:"Chairman of the Board",bio:"Provides board leadership and deep technology-company experience to Neurologic AI.",proof:"PhD (EE) · WASHINGTON UNIVERSITY"},
   {initials:"JG",name:"John Gillotte",role:"Co-Founder & CTO",bio:"Leads Neurologic AI's technology direction and enterprise AI architecture.",proof:"BS (COMPUTER SCIENCE) · UNIVERSITY OF MICHIGAN"},
-  {initials:"NA",name:"Nishan Ali",role:"Founder & CEO",bio:"Founded Neurologic AI and leads its strategy, customers, and applied-AI mission.",proof:"M.TECH (AI) · IIT JODHPUR"},
-  {initials:"IB",name:"Indranil Basu",role:"Principal Data Science Advisor",bio:"Advises the company on data science, research quality, and production AI delivery.",proof:"IIT KHARAGPUR · ISI KOLKATA"},
-  {initials:"AB",name:"Aditya Bhattacharya",role:"Principal Data Science & Engineering Advisor",bio:"Advises Neurologic AI across machine learning, data science, and engineering.",proof:"MS (COMPUTER SCIENCE, ML) · GEORGIA TECH"}
+  {initials:"NA",name:"Nishan Ali",role:"Founder & CEO",bio:"Founded Neurologic AI and leads its strategy, customers, and applied-AI mission.",proof:"M.TECH (AI) · IIT JODHPUR"}
 ];
 
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
