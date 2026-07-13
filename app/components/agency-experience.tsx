@@ -24,10 +24,11 @@ const verticals=[
 ];
 
 const leaders=[
-  {initials:"SD",name:"Dr. Santanu Das",role:"Chairman",bio:"Founded and led TranSwitch Corporation from inception to a NASDAQ listing. Brings semiconductor, systems, and public-company operating depth to the sovereign AI thesis.",proof:"NASDAQ FOUNDER · SEMICONDUCTOR"},
-  {initials:"NA",name:"Nishan Ali",role:"Chief Executive Officer",bio:"M.Tech in AI; formerly UnitedHealth Group. Nine years in core data science, 27+ production projects, two US patents, and the founder leading every first customer briefing.",proof:"AI · HEALTHCARE · ENTERPRISE"},
-  {initials:"JG",name:"John Gillotte",role:"Chief Technology Officer",bio:"Twenty-two years building enterprise infrastructure and AI systems, including founding-engineering experience at AWS and healthcare foundation models tested on public benchmarks.",proof:"AWS · FOUNDATION MODELS · 22 YEARS"},
-  {initials:"AA",name:"Alfaz Ahmed",role:"Engineering Lead",bio:"Formerly Amazon and Siemens. Leads the engineering organisation across the United States and India, turning platform research into deployed enterprise capability.",proof:"AMAZON · SIEMENS · DELIVERY"}
+  {initials:"SD",name:"Dr. Santanu Das",role:"Chairman of the Board",bio:"Provides board leadership and deep technology-company experience to Neurologic AI.",proof:"PhD (EE) · WASHINGTON UNIVERSITY"},
+  {initials:"JG",name:"John Gillotte",role:"Co-Founder & CTO",bio:"Leads Neurologic AI's technology direction and enterprise AI architecture.",proof:"BS (COMPUTER SCIENCE) · UNIVERSITY OF MICHIGAN"},
+  {initials:"NA",name:"Nishan Ali",role:"Founder & CEO",bio:"Founded Neurologic AI and leads its strategy, customers, and applied-AI mission.",proof:"M.TECH (AI) · IIT JODHPUR"},
+  {initials:"IB",name:"Indranil Basu",role:"Principal Data Science Advisor",bio:"Advises the company on data science, research quality, and production AI delivery.",proof:"IIT KHARAGPUR · ISI KOLKATA"},
+  {initials:"AB",name:"Aditya Bhattacharya",role:"Principal Data Science & Engineering Advisor",bio:"Advises Neurologic AI across machine learning, data science, and engineering.",proof:"MS (COMPUTER SCIENCE, ML) · GEORGIA TECH"}
 ];
 
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
