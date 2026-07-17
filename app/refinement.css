@@ -1,0 +1,77 @@
+/* Final cross-route refinement layer. Kept separate so the active systems can be
+   consolidated without adding more specificity to their historical stylesheets. */
+
+:root{--focus-light:#07552f;--focus-dark:#65f2a7;--header-h:68px}
+.agency-site{font-family:InstrumentWorld,var(--font-sans),sans-serif}
+.agency-cta h2 em{color:#083b26}
+.world-breadcrumb i{color:#5d686b}
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--focus-light);outline-offset:3px
+}
+.agency-site :is(a,button):focus-visible,.briefing-world .briefing-world-hero :is(a,button):focus-visible,
+.site-footer :is(a,button):focus-visible{outline-color:var(--focus-dark);box-shadow:0 0 0 2px #102018}
+
+.client-case-top{margin-bottom:30px}
+.client-card-logo{height:54px;display:flex;align-items:center;margin-bottom:24px}
+.client-card-logo img{display:block;max-width:220px;max-height:48px;width:auto;height:auto;object-fit:contain}
+
+.vertical-evidence-key{margin-top:auto;border-top:1px solid var(--a-line);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.vertical-evidence-key b{font-size:9px;letter-spacing:.13em;color:var(--a-green-dark)}
+.vertical-evidence-key span{font-size:12px;line-height:1.45;text-transform:uppercase;color:var(--a-ink)}
+.vertical-evidence-key small{font-size:11px;line-height:1.55;color:var(--a-muted)}
+
+.resource-grid article:hover{background:transparent}
+.resource-grid article.actionable:hover{background:#edf8f1}
+.resource-grid article>a{display:inline-flex;margin-top:auto;color:var(--w-green-dark);font-size:10px;font-weight:750;letter-spacing:.08em;text-decoration:underline;text-underline-offset:4px}
+.resource-grid article>b{font-size:10px;line-height:1.4}
+.footer-grid>nav{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.neurologic-lockup{text-decoration:none}
+
+.refined-not-found{min-height:100svh;background:var(--w-deep);color:#fff;padding:clamp(150px,20vh,230px) clamp(24px,7vw,110px) 90px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.55fr);gap:8vw;align-items:end}
+.refined-not-found>div>span{font-size:10px;letter-spacing:.16em;color:var(--w-green)}
+.refined-not-found h1{font-size:clamp(70px,10vw,150px);line-height:.82;letter-spacing:-.07em;max-width:8ch;margin:28px 0}
+.refined-not-found h1 em{color:var(--w-green)}
+.refined-not-found>div>p{font-size:18px;line-height:1.65;color:rgba(255,255,255,.64);max-width:45ch}
+.refined-not-found nav{border-top:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column}
+.refined-not-found nav a{color:#fff;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.08em}
+.refined-not-found nav a:first-child{color:var(--w-green)}
+
+@media (min-width:761px) and (max-width:800px){
+  .agency-horizontal{height:auto}
+  .agency-horizontal-stage{position:relative;height:auto;padding:70px 0;overflow:hidden}
+  .product-story-head{height:auto;padding:0 20px 35px;display:block}
+  .product-story-head>p{width:auto}.product-story-head>span{display:block;margin-top:20px}
+  .agency-product-track{width:auto;height:auto;padding:0 20px;display:grid;gap:15px;transform:none!important}
+  .agency-product-track article{width:100%;min-height:650px;grid-template-columns:1fr}
+  .product-shot{margin:0 15px 15px;min-height:300px}.agency-horizontal-progress{display:none}
+}
+
+@media (max-width:900px), (max-height:680px), (pointer:coarse){
+  .world-system-film{height:auto}.world-system-stage{position:relative;height:auto;min-height:0}
+}
+
+@media(max-width:760px){
+  .site-header{padding-top:env(safe-area-inset-top)}
+  .site-header nav.open{padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+  .site-header nav.open a,.site-header nav.open button{min-height:44px}
+  .world-subnav{overflow-x:auto;scrollbar-width:none}.world-subnav>div{min-width:max-content}
+  .briefing-world .site-header .wordmark,.briefing-world .site-header nav.open,
+  .briefing-world .site-header nav.open a,.briefing-world .site-header nav.open button{color:#fff}
+  .briefing-world .site-header nav.open{background:var(--w-deep)}
+  .briefing-world .menu-toggle{border-color:rgba(255,255,255,.45)}
+  .briefing-world .menu-toggle i{background:#fff}
+  .briefing-world .site-header .nav-cta{background:var(--w-green);color:#082619}
+  .briefing-world-form input,.briefing-world-form select,.briefing-world-form textarea{font-size:16px;min-height:44px}
+  .briefing-world-form :is(input,select,textarea):focus-visible{border-color:var(--w-green-dark);outline:3px solid var(--focus-light);outline-offset:3px}
+  .legal-document aside nav{display:flex;flex-direction:row;overflow-x:auto;gap:8px;border-top:0;margin-top:24px;scrollbar-width:none}
+  .legal-document aside nav a{white-space:nowrap;border:1px solid var(--w-line);padding:10px 12px;min-height:44px;display:flex;align-items:center}
+  .client-card-logo{height:48px}.client-card-logo img{max-width:190px;max-height:42px}
+  .vertical-evidence-key{margin-top:24px}
+  .refined-not-found{grid-template-columns:1fr;padding:130px 20px 80px;gap:70px}
+  .refined-not-found h1{font-size:74px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.agency-product-track{transform:none!important}
+}
