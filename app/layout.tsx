@@ -5,6 +5,7 @@ import "./agency.css";
 import "./agency-pages.css";
 import "./world-pages.css";
 import "./refinement.css";
+import "./mobile-luxury.css";
 
 const sans = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
