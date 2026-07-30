@@ -25,7 +25,63 @@ const verticals=[
 ];
 
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
-function AgencyMotion(){useEffect(()=>{const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;const reveals=[...document.querySelectorAll<HTMLElement>("[data-agency-reveal]")];const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){(e.target as HTMLElement).classList.add("is-in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -40px"});reveals.forEach(x=>io.observe(x));const horizontals=[...document.querySelectorAll<HTMLElement>("[data-agency-horizontal]")];const architectures=[...document.querySelectorAll<HTMLElement>("[data-agency-architecture]")];let raf=0,dirty=true;const frame=()=>{if(dirty){dirty=false;horizontals.forEach(section=>{const r=section.getBoundingClientRect(),p=clamp(-r.top/Math.max(1,r.height-innerHeight)),stage=section.querySelector<HTMLElement>("[data-agency-stage]")!,track=section.querySelector<HTMLElement>("[data-agency-track]")!;if(!stage||!track)return;const max=Math.max(0,track.scrollWidth-stage.clientWidth);track.style.transform=innerWidth<800||reduced?"none":`translate3d(${-p*max}px,0,0)`;section.style.setProperty("--agency-p",String(p))});architectures.forEach(section=>{const r=section.getBoundingClientRect(),p=clamp((innerHeight*.65-r.top)/Math.max(1,r.height+innerHeight*.3));section.style.setProperty("--arch-p",String(reduced?1:p))})}raf=requestAnimationFrame(frame)};const mark=()=>{dirty=true};addEventListener("scroll",mark,{passive:true});addEventListener("resize",mark,{passive:true});raf=requestAnimationFrame(frame);return()=>{cancelAnimationFrame(raf);removeEventListener("scroll",mark);removeEventListener("resize",mark);io.disconnect()}},[]);return null}
+function AgencyMotion(){
+  useEffect(()=>{
+    const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reveals=[...document.querySelectorAll<HTMLElement>("[data-agency-reveal]")];
+    const io=new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){
+        (e.target as HTMLElement).classList.add("is-in");
+        io.unobserve(e.target);
+      }
+    }),{threshold:.12,rootMargin:"0px 0px -40px"});
+    reveals.forEach(x=>io.observe(x));
+
+    const horizontals=[...document.querySelectorAll<HTMLElement>("[data-agency-horizontal]")];
+    const architectures=[...document.querySelectorAll<HTMLElement>("[data-agency-architecture]")];
+    let raf=0,dirty=true;
+    const frame=()=>{
+      if(dirty){
+        dirty=false;
+        horizontals.forEach(section=>{
+          const r=section.getBoundingClientRect();
+          const p=clamp(-r.top/Math.max(1,r.height-innerHeight));
+          const stage=section.querySelector<HTMLElement>("[data-agency-stage]");
+          const track=section.querySelector<HTMLElement>("[data-agency-track]");
+          if(!stage||!track)return;
+          const max=Math.max(0,track.scrollWidth-stage.clientWidth);
+          track.style.transform=reduced?"none":`translate3d(${-p*max}px,0,0)`;
+          section.style.setProperty("--agency-p",String(p));
+          const counter=section.querySelector<HTMLElement>("[data-agency-counter]");
+          const count=track.children.length;
+          if(counter&&count){
+            const current=Math.min(count,Math.round(p*(count-1))+1);
+            counter.textContent=`${String(current).padStart(2,"0")} / ${String(count).padStart(2,"0")}`;
+            counter.setAttribute("aria-label",`Product chapter ${current} of ${count}`);
+          }
+          section.querySelector<HTMLElement>("[data-agency-progress]")?.setAttribute("aria-valuenow",String(Math.round(p*100)));
+        });
+        architectures.forEach(section=>{
+          const r=section.getBoundingClientRect();
+          const p=clamp((innerHeight*.65-r.top)/Math.max(1,r.height+innerHeight*.3));
+          section.style.setProperty("--arch-p",String(reduced?1:p));
+        });
+      }
+      raf=requestAnimationFrame(frame);
+    };
+    const mark=()=>{dirty=true};
+    addEventListener("scroll",mark,{passive:true});
+    addEventListener("resize",mark,{passive:true});
+    raf=requestAnimationFrame(frame);
+    return()=>{
+      cancelAnimationFrame(raf);
+      removeEventListener("scroll",mark);
+      removeEventListener("resize",mark);
+      io.disconnect();
+    };
+  },[]);
+  return null;
+}
 
 function AgencyHero(){return <section className="agency-hero"><div className="agency-hero-copy"><p>CORPORATE GPT · SOVEREIGN ENTERPRISE AI</p><h1>AI inside your walls.<br/>Under <em>your control.</em></h1><span>Enterprise AI and custom agents, deployed inside your data centre or cloud tenant—so documents, data, and learned assets remain within the boundary and data paths agreed for that deployment.</span><div className="agency-actions"><Link href="/briefing">Request a briefing</Link><Link href="/platform">Explore the platform ↗</Link></div><div className="agency-hero-stats"><b>03 <span>regulated sectors represented</span></b><b>12 <span>week reference rollout</span></b><b>−60% <span>modeled total cost</span></b></div></div><div className="sovereign-object" role="img" aria-label="Corporate GPT architecture places employees, agents, and customer-specific AI inside a customer-controlled boundary with documented data paths"><div className="object-boundary"><span>YOUR ORGANISATION&apos;S BOUNDARY</span><div className="object-ring ring-a"><i>EMPLOYEES</i></div><div className="object-ring ring-b"><i>AI AGENTS</i></div><div className="object-ring ring-c"><i>CORPORATE LLM</i></div><div className="object-core"><img src="/brand/neurologic-logogram-white.png" alt="" width="150" height="134"/><b>CORPORATE GPT</b><small>CONTROLLED PATHS</small></div><p>BOUNDARY SET PER DEPLOYMENT</p></div></div><div className="mobile-scroll-cue" aria-hidden="true"><span>Scroll to enter the system</span><i/></div></section>}
 
@@ -33,7 +89,7 @@ export function ClientProof({expanded=false}:{expanded?:boolean}){return <sectio
 
 function ArchitectureStory(){const layers=[{name:"AI applications",desc:"Employee-facing apps & workflows",owner:"YOU BUILD"},{name:"AI agents",desc:"Composed, governed, orchestrated",owner:"WE BUILD · YOU BUILD"},{name:"Corporate LLM",desc:"Neurologic platform IP + your knowledge",owner:"WE PROVIDE & BUILD"},{name:"GPU servers",desc:"Accelerated inference and learning",owner:"YOU OWN · WE RESELL"},{name:"Data centre / cloud",desc:"On-premise or your tenant",owner:"YOU OWN"}];return <section className="architecture-story" data-agency-architecture><div className="architecture-copy" data-agency-reveal><p>SOVEREIGN AI ARCHITECTURE</p><h2>The whole stack—<em>yours or ours.</em></h2><span>Your deployment keeps infrastructure, data, and learned assets under the control model agreed for your environment. Your teams build applications and agents on top—or we build with you.</span><Link href="/deployment">Explore deployment architecture ↗</Link></div><div className="architecture-stack">{layers.map((x,i)=><div className={`arch-layer arch-${i}`} key={x.name} style={{"--layer":i} as React.CSSProperties}><span>0{i+1}</span><div><h3>{x.name}</h3><p>{x.desc}</p></div><b>{x.owner}</b></div>)}<small>YOUR SECURITY BOUNDARY</small></div></section>}
 
-function ProductHorizontal(){return <section className="agency-horizontal" data-agency-horizontal><div className="agency-horizontal-stage" data-agency-stage><div className="product-story-head"><p>THE PRODUCT · REAL INTERFACES</p><h2>From a question to <em>an outcome.</em></h2><span>Swipe through the product</span></div><div className="agency-product-track" data-agency-track data-mobile-track role="region" aria-label="Corporate GPT product interfaces" tabIndex={0}>{products.map(p=><article key={p.n}><div className="product-panel-copy"><span>{p.n} / 04</span><small>{p.eyebrow}</small><h3>{p.title}</h3><p>{p.body}</p><div><strong>{p.stat}</strong><em>{p.statLabel}</em></div><Link href={p.href}>Explore this capability ↗</Link></div><div className="product-shot"><img src={p.image} alt={`${p.title} Corporate GPT product interface`} loading="lazy" decoding="async"/></div></article>)}</div><div className="agency-horizontal-progress"><i/></div></div></section>}
+function ProductHorizontal(){return <section className="agency-horizontal" data-agency-horizontal><div className="agency-horizontal-stage" data-agency-stage><div className="product-story-head"><p>THE PRODUCT · REAL INTERFACES</p><h2>From a question to <em>an outcome.</em></h2><span>Scroll down—the story moves with you</span><b className="mobile-product-counter" data-agency-counter aria-live="polite">01 / 04</b></div><div className="agency-product-track" data-agency-track role="region" aria-label="Scroll-driven Corporate GPT product story">{products.map(p=><article key={p.n}><div className="product-panel-copy"><span>{p.n} / 04</span><small>{p.eyebrow}</small><h3>{p.title}</h3><p>{p.body}</p><div><strong>{p.stat}</strong><em>{p.statLabel}</em></div><Link href={p.href}>Explore this capability ↗</Link></div><div className="product-shot"><img src={p.image} alt={`${p.title} Corporate GPT product interface`} loading="lazy" decoding="async"/></div></article>)}</div><div className="agency-horizontal-progress" data-agency-progress role="progressbar" aria-label="Product story progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={0}><i/></div></div></section>}
 
 function CorporateLLM(){return <section className="corporate-llm"><div className="agency-section-head" data-agency-reveal><div><p>CUSTOMER-SPECIFIC INTELLIGENCE</p><h2>Not generic context.<br/><em>Your operating knowledge.</em></h2></div><span>Customer-specific retrieval, memory, configurations, evaluation sets, and approved adapters can improve inside the agreed environment.</span></div><div className="llm-equation" data-agency-reveal role="img" aria-label="Open foundation model plus Neurologic platform capabilities plus customer knowledge produces customer-specific intelligence governed by licenses and the customer agreement"><div><span>01</span><h3>Foundation model</h3><p>Selected under its applicable license.</p></div><b>+</b><div><span>02</span><h3>Neurologic platform IP</h3><p>Grounding, orchestration, controls, and evaluation.</p></div><b>+</b><div><span>03</span><h3>Your knowledge</h3><p>Your approved language, policies, documents, and decisions.</p></div><b>=</b><div className="owned"><span>04</span><h3>Customer-specific intelligence</h3><p>Rights follow the model licenses and signed customer agreement.</p></div></div></section>}
 
