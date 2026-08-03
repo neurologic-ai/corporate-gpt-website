@@ -12,20 +12,20 @@ const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://corporate-gpt.ai"),
-  title: { default: "Corporate GPT — The AI that learns your company", template: "%s — Corporate GPT" },
-  description: "Sovereign enterprise search, governed workspaces, and agents deployed inside the customer-controlled infrastructure boundary.",
+  title: { default: "Corporate GPT — Adaptive Enterprise Intelligence", template: "%s — Corporate GPT" },
+  description: "Own the intelligence that runs your enterprise: AI Assistants, Governed Agents, and Digital Experts inside the customer-controlled boundary.",
   keywords: ["sovereign enterprise AI", "private enterprise AI", "air-gapped AI", "adaptive enterprise intelligence", "Corporate GPT"],
   applicationName: "Corporate GPT",
   creator: "Neurologic AI",
   publisher: "Neurologic AI",
   alternates: { canonical: "/" },
-  openGraph: { title: "Corporate GPT — The AI that learns your company", description: "Sovereign enterprise search, governed workspaces, and agents deployed inside the customer-controlled infrastructure boundary.", type: "website", siteName: "Corporate GPT", url: "/", images: [{url:"/og-corporate-gpt.png",width:1200,height:630,alt:"Corporate GPT by Neurologic AI"}] },
-  twitter: { card:"summary_large_image", title:"Corporate GPT — Sovereign Enterprise AI", description:"Enterprise search, governed work, and agents inside your perimeter.", images:["/og-corporate-gpt.png"] },
+  openGraph: { title: "Corporate GPT — Adaptive Enterprise Intelligence", description: "AI Assistants, Governed Agents, and Digital Experts that compound inside the customer-controlled boundary.", type: "website", siteName: "Corporate GPT", url: "/", images: [{url:"/og-corporate-gpt.png",width:1200,height:630,alt:"Corporate GPT by Neurologic AI"}] },
+  twitter: { card:"summary_large_image", title:"Corporate GPT — Adaptive Enterprise Intelligence", description:"Own the intelligence that runs your enterprise.", images:["/og-corporate-gpt.png"] },
   robots: { index: true, follow: true },
   icons: { icon: "/brand/neurologic-logogram-dark.png", shortcut: "/brand/neurologic-logogram-dark.png" },
 };
 
 const organizationJsonLd={"@context":"https://schema.org","@type":"Organization",name:"Neurologic AI",url:"https://www.neurologicai.com",brand:{"@type":"Brand",name:"Corporate GPT"},sameAs:["https://www.neurologicai.com"]};
-const productJsonLd={"@context":"https://schema.org","@type":"SoftwareApplication",name:"Corporate GPT",applicationCategory:"BusinessApplication",operatingSystem:"Customer-hosted",url:"https://corporate-gpt.ai",provider:{"@type":"Organization",name:"Neurologic AI",url:"https://www.neurologicai.com"},description:"Sovereign enterprise search, governed workspaces, and agents deployed inside a customer-controlled infrastructure boundary."};
+const productJsonLd={"@context":"https://schema.org","@type":"SoftwareApplication",name:"Corporate GPT",applicationCategory:"BusinessApplication",operatingSystem:"Customer-hosted",url:"https://corporate-gpt.ai",provider:{"@type":"Organization",name:"Neurologic AI",url:"https://www.neurologicai.com"},description:"Adaptive Enterprise Intelligence for AI Assistants, Governed Agents, and Digital Experts inside a customer-controlled boundary."};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body className={`${sans.variable} ${mono.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationJsonLd)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(productJsonLd)}}/>{children}</body></html>; }
