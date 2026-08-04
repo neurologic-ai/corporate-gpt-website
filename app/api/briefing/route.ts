@@ -6,13 +6,6 @@ const REQUIRED_FIELDS = [
   "name",
   "email",
   "company",
-  "role",
-  "industry",
-  "deployment",
-  "outcome1",
-  "outcome2",
-  "outcome3",
-  "evidence",
 ] as const;
 
 type BriefingPayload = Record<string, unknown>;
@@ -37,15 +30,7 @@ function buildMessage(payload: BriefingPayload) {
     ["Name", clean(payload.name, 120)],
     ["Work email", clean(payload.email, 160)],
     ["Company", clean(payload.company, 160)],
-    ["Role", clean(payload.role, 120)],
-    ["Industry", clean(payload.industry, 120)],
-    ["Deployment boundary", clean(payload.deployment, 160)],
-    ["Outcome 1 — decision or deliverable", clean(payload.outcome1)],
-    ["Outcome 2 — governed recurring work", clean(payload.outcome2)],
-    ["Outcome 3 — scarce expertise", clean(payload.outcome3)],
-    ["Systems and data", clean(payload.systems)],
-    ["Accepted evidence", clean(payload.evidence)],
-    ["Security or procurement constraints", clean(payload.constraints)],
+    ["Anything we should know?", clean(payload.comments)],
   ];
 
   return rows.map(([label, value]) => `${label}:\n${value || "—"}`).join("\n\n");
@@ -89,8 +74,8 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.BRIEFING_FROM_EMAIL;
-  const to = process.env.BRIEFING_TO_EMAIL;
-  if (!apiKey || !from || !to) {
+  const to = process.env.BRIEFING_TO_EMAIL || "nishan@neurologicai.com";
+  if (!apiKey || !from) {
     return NextResponse.json({ error: "submission_service_unconfigured" }, { status: 503 });
   }
 
