@@ -12,15 +12,15 @@ const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://corporate-gpt.ai"),
-  title: { default: "Corporate GPT — Adaptive Enterprise Intelligence", template: "%s — Corporate GPT" },
-  description: "Own the intelligence that runs your enterprise: AI Assistants, Governed Agents, and Digital Experts inside the customer-controlled boundary.",
+  title: { default: "Corporate GPT — Institutional Intelligence That Compounds", template: "%s — Corporate GPT" },
+  description: "Company-specific AI that compounds approved knowledge, workflows, and expert methods inside the enterprise boundary.",
   keywords: ["sovereign enterprise AI", "private enterprise AI", "air-gapped AI", "adaptive enterprise intelligence", "Corporate GPT"],
   applicationName: "Corporate GPT",
   creator: "Neurologic AI",
   publisher: "Neurologic AI",
   alternates: { canonical: "/" },
-  openGraph: { title: "Corporate GPT — Adaptive Enterprise Intelligence", description: "AI Assistants, Governed Agents, and Digital Experts that compound inside the customer-controlled boundary.", type: "website", siteName: "Corporate GPT", url: "/", images: [{url:"/og-corporate-gpt.png",width:1200,height:630,alt:"Corporate GPT by Neurologic AI"}] },
-  twitter: { card:"summary_large_image", title:"Corporate GPT — Adaptive Enterprise Intelligence", description:"Own the intelligence that runs your enterprise.", images:["/og-corporate-gpt.png"] },
+  openGraph: { title: "Corporate GPT — Institutional Intelligence That Compounds", description: "AI Assistants, Governed Agents, and Digital Experts that turn approved outcomes into lasting enterprise capability.", type: "website", siteName: "Corporate GPT", url: "/", images: [{url:"/og-corporate-gpt-adaptive.png",width:1200,height:630,alt:"Corporate GPT — institutional intelligence that compounds"}] },
+  twitter: { card:"summary_large_image", title:"Corporate GPT — Institutional Intelligence That Compounds", description:"Own the intelligence that runs your enterprise.", images:["/og-corporate-gpt-adaptive.png"] },
   robots: { index: true, follow: true },
   icons: { icon: "/brand/neurologic-logogram-dark.png", shortcut: "/brand/neurologic-logogram-dark.png" },
 };

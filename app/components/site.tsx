@@ -31,7 +31,7 @@ export function SiteHeader() {
           <button type="button" aria-expanded={openGroup==="industries"} aria-controls="industries-menu" onClick={()=>setOpenGroup(openGroup==="industries"?null:"industries")}>Industries <span aria-hidden="true">⌄</span></button>
           <div className="mega narrow" id="industries-menu"><div><small>INDUSTRY PACKS</small><Link href="/industries">All industries</Link><Link href="/industries/healthcare">Healthcare & med devices</Link><Link href="/industries/semiconductor">Semiconductor</Link><Link href="/industries/government">Government & public sector</Link><Link href="/industries/manufacturing">Manufacturing & industrial</Link><Link href="/industries/retail">Retail & hospitality</Link></div></div>
         </div>
-        <Link href="/proof">Proof</Link><Link href="/deployment">Deployment</Link><Link href="/company">Company</Link><Link href="/briefing" className="nav-cta">Design the mandate</Link>
+        <Link href="/proof">Proof</Link><Link href="/deployment">Deployment</Link><Link href="/company">Company</Link><Link href="/briefing" className="nav-cta">Book a briefing</Link>
       </nav>
     </div>
   </header>;
