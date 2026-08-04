@@ -213,4 +213,4 @@ function DeploymentRail(){return <section className="deployment-rail"><div class
 
 function AgencyCTA(){return <section className="agency-cta"><p>START WITH ONE REAL WORKFLOW</p><h2>See Corporate GPT<br/><em>on your hardest work.</em></h2><span>Bring one workflow. Leave with a practical activation path.</span><Link href="/briefing">Book a briefing ↗</Link></section>}
 
-export function AgencyHome(){return <div className="agency-site"><AgencyMotion/><SiteHeader/><main id="main"><AgencyHero/><AdaptiveIntelligence/><AssemblyStory/><ConnectorEcosystem/><ClientProof/><ProductHorizontal/><CompoundingCapability/><UnlimitedTokens/><DeploymentRail/><AgencyCTA/></main><SiteFooter/></div>}
+export function AgencyHome(){return <div className="agency-site"><AgencyMotion/><SiteHeader/><main id="main"><AgencyHero/><ClientProof/><ConnectorEcosystem/><AdaptiveIntelligence/><AssemblyStory/><ProductHorizontal/><CompoundingCapability/><UnlimitedTokens/><DeploymentRail/><AgencyCTA/></main><SiteFooter/></div>}
