@@ -358,6 +358,11 @@
   .connector-marquees{padding:40px 0 38px;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}.connector-mark{width:166px;height:68px;padding:14px;gap:11px}.connector-mark svg{width:23px;height:23px}.connector-mark span{font-size:10px}.connector-core{top:65%;width:142px;height:104px;border-radius:20px;box-shadow:0 20px 50px rgba(9,25,16,.22),0 0 0 7px rgba(245,244,239,.94)}.connector-core img{width:27px}.connector-core b{font-size:8px}.connector-core small{font-size:5px}
   .connector-rule{margin:8px var(--mobile-gutter) 0;font-size:12px;line-height:1.55}.connector-rule a{float:none;display:block;margin-top:12px}
 
+  .enterprise-model{min-height:0;padding:96px var(--mobile-gutter);gap:46px;background:radial-gradient(circle at 50% 70%,rgba(20,223,119,.12),transparent 34%),#111312}.enterprise-model:before{background-size:44px 44px;mask-image:linear-gradient(180deg,transparent,#000 24%,#000 88%,transparent)}
+  .enterprise-model-copy>p{font-size:9px;margin-bottom:22px}.enterprise-model-copy h2{font-size:50px;max-width:9.7ch}.enterprise-model-copy>span{margin-top:27px;font-size:14px;line-height:1.65}.enterprise-model-copy>strong{margin-top:31px;padding-top:16px;font-size:8px}
+  .enterprise-model-object{min-height:0}.enterprise-model-boundary{width:100%;border-radius:24px}.enterprise-model-boundary:before,.enterprise-model-boundary:after{width:18px;height:18px}.enterprise-model-boundary:before{left:13px;top:13px}.enterprise-model-boundary:after{right:13px;bottom:13px}.enterprise-model-boundary>span{top:18px;font-size:5px}.enterprise-model-boundary>p{bottom:18px;font-size:5px}
+  .enterprise-model-core{width:43%;border-radius:19px;box-shadow:0 0 0 7px rgba(20,223,119,.035),0 0 45px rgba(20,223,119,.17),0 25px 55px rgba(0,0,0,.36)}.enterprise-model-core small{font-size:5px}.enterprise-model-core b{font-size:30px;margin:13px 0}.enterprise-model-core em{font-size:4px}.enterprise-model-field i{width:4px;height:4px}
+
   .client-case-grid article:first-child{background:radial-gradient(circle at 85% 12%,rgba(20,223,119,.11),transparent 26%),#151716;border-color:#2d3531}.client-case-grid article:first-child:after{background:rgba(20,223,119,.08)}
 
   .economics-proof{display:block;padding:96px var(--mobile-gutter);background:#f5f4ef}
